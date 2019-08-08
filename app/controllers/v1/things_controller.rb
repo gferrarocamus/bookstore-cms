@@ -5,7 +5,7 @@ class V1::ThingsController < ApplicationController
         :name => 'some-thing',
         :guid => 'some-thing-guid'
       }
-    ]    
+    ]
   }.to_json
   end
 end

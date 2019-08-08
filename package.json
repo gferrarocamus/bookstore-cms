@@ -9,7 +9,6 @@
     "@rails/webpacker": "^4.0.7",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-polyfill": "^6.26.0",
-    "install": "^0.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -19,11 +18,13 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "turbolinks": "^5.2.0",
-    "yarn": "^1.17.3"
+    "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.7.2"
+    "install": "^0.13.0",
+    "redux-devtools-extension": "^2.13.8",
+    "webpack-dev-server": "^3.7.2",
+    "yarn": "^1.17.3"
   }
 }
