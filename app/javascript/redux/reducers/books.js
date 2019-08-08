@@ -1,20 +1,20 @@
-
+import { initialState } from '../../data';
 const uuidv1 = require('uuid/v1');
 
-function getThings() {
-  fetch('http://localhost:3000/v1/books.json')
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
-  });
-}
+// function getThings() {
+//   fetch('http://localhost:3000/v1/books.json')
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(myJson) {
+//     console.log(JSON.stringify(myJson));
+//   });
+// }
 
-const data = getThings()
-console.log(data)
+// const data = getThings()
 
-const books = (state = data, action) => {
+
+const books = (state = initialState, action) => {
   switch (action.type) {
     case 'CREATE_BOOK': {
       const book = {
