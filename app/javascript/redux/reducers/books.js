@@ -1,4 +1,4 @@
-import { initialState } from '../../../../bookstore/src/data';
+import { initialState } from '../../data';
 
 const uuidv1 = require('uuid/v1');
 

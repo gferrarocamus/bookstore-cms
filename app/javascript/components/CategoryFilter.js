@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { changeFilter } from '../redux/actions/index';
-import { categories } from '../../../bookstore/src/data';
+import { categories } from '../data';
 
 const CategoryFilter = ({ updateFilter }) => {
   const cat = ['All', ...categories];
