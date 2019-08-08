@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '*page', to: 'static#index', constraints: ->(req) do
     !req.xhr? && req.format.html?
   end
-  get 'books', to: 'static#index'
-  root 'static#index'
+  
+  root 'static#index', to: 'books#index'
 end
