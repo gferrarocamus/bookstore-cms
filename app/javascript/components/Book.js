@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = props => {
-  const {
-    id, title, author, percentage, category,deleteBook,
-  } = props;
+  const { id, title, author, percentage, category, deleteBook } = props;
   const percentageToDegrees = Math.round(percentage * 1.8);
   const percentageStyle = {
     transform: `rotate(${percentageToDegrees}deg)`,
@@ -24,13 +22,18 @@ const Book = props => {
             className="action-button"
             type="button"
             onClick={() => {
-             deleteBook(id);
+              deleteBook(id);
             }}
           >
             Remove
           </button>
           {' | '}
-          <button className="action-button no-click" type="button" href="#" disabled>
+          <button
+            className="action-button no-click"
+            type="button"
+            href="#"
+            disabled
+          >
             Edit
           </button>
         </div>
@@ -39,18 +42,13 @@ const Book = props => {
         <div className="circle">
           <div className="circle-wrap">
             <div className="circle">
-              <div
-                className="mask"
-                style={percentageStyle}
-              >
+              <div className="mask" style={percentageStyle}>
                 <div
                   className={percentage === '0' ? '' : 'fill'}
                   style={percentageStyle}
                 />
               </div>
-              <div
-                className="mask half"
-              >
+              <div className="mask half">
                 <div
                   className={percentage === '0' ? '' : 'fill'}
                   style={percentageStyle}

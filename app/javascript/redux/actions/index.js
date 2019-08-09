@@ -35,7 +35,7 @@ export const fetchBooks = () => async dispatch => {
     dispatch(getBooks(res.data));
   } catch (err) {
     dispatch(
-      postError({ msg: err.response.statusText, status: err.response.status }),
+      postError({ msg: err })
     );
   }
 };
@@ -46,7 +46,7 @@ export const deleteBook = id => async dispatch => {
     dispatch(removeBook(id));
   } catch (err) {
     dispatch(
-      postError({ msg: err.response.statusText, status: err.response.status }),
+      postError({ msg: err })
     );
   }
 };
@@ -56,14 +56,13 @@ export const addBook = (title, category) => async dispatch => {
     const res = await axios.post('/v1/books', {
       title,
       category,
-      author: 'HP Lovecraft'
+      author: 'Unknown',
     });
     dispatch(fetchBooks());
   } catch (err) {
-    console.log(err)
-    // dispatch(
-    //   postError({ msg: err.response.statusText, status: err.response.status }),
-    // );
+    dispatch(
+      postError({ msg: err }),
+    );
   }
 };
 
