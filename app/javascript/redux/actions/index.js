@@ -60,4 +60,4 @@ export const addBook = (title, category) => async dispatch => {
   }
 };
 
-export default createBook;
+export default fetchBooks;
