@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { createBook } from '../redux/actions/index';
+import { addBook } from '../redux/actions/index';
 import { categories } from '../data';
 
 const BookForm = ({ addBook }) => {
@@ -55,5 +55,5 @@ BookForm.propTypes = {
 
 export default connect(
   null,
-  { addBook: createBook },
+  { addBook: addBook },
 )(BookForm);

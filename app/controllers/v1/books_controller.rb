@@ -5,6 +5,8 @@ class V1::BooksController < ApplicationController
   end
 
   def create
+    book = Book.create(book_params)
+    render json: book
   end
 
   def destroy
@@ -14,6 +16,6 @@ class V1::BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :description, :category)
+    params.require(:book).permit(:title, :category, :author)
   end
 end

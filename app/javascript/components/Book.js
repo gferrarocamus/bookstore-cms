@@ -24,7 +24,6 @@ const Book = props => {
             className="action-button"
             type="button"
             onClick={() => {
-              console.log(typeof id)
              deleteBook(id);
             }}
           >

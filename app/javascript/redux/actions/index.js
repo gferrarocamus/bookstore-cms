@@ -27,27 +27,44 @@ export const postError = error => ({
 });
 
 // postError equal to bookError
-
+// change how to handle error in try catch
 
 export const fetchBooks = () => async dispatch => {
   try {
     const res = await axios.get('/v1/books');
     dispatch(getBooks(res.data));
   } catch (err) {
-    dispatch(postError({ msg: err.response.statusText, status: err.response.status }));
+    dispatch(
+      postError({ msg: err.response.statusText, status: err.response.status }),
+    );
   }
 };
 
-export const  deleteBook= (id) => async dispatch => {
+export const deleteBook = id => async dispatch => {
   try {
-    const res = await axios.delete(`/v1/books/${id}`)
-    dispatch(removeBook(id))
+    const res = await axios.delete(`/v1/books/${id}`);
+    dispatch(removeBook(id));
   } catch (err) {
-    dispatch(postError({ msg: err.response.statusText, status: err.response.status }));
+    dispatch(
+      postError({ msg: err.response.statusText, status: err.response.status }),
+    );
   }
+};
 
-
-}
-
+export const addBook = (title, category) => async dispatch => {
+  try {
+    const res = await axios.post('/v1/books', {
+      title,
+      category,
+      author: 'HP Lovecraft'
+    });
+    dispatch(fetchBooks());
+  } catch (err) {
+    console.log(err)
+    // dispatch(
+    //   postError({ msg: err.response.statusText, status: err.response.status }),
+    // );
+  }
+};
 
 export default createBook;
