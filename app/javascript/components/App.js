@@ -1,25 +1,24 @@
-import React from 'react';
-import {Provider} from 'react-redux'
-import PropTypes from 'prop-types';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import HelloWorld from './HelloWorld';
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Homepage from './Homepage'
+import { fetchBooks } from '../redux/actions/index'
+import configureStore from '../redux/configureStore';
 
-import configureStore from '../configureStore'
+const store = configureStore();
 
-const store = configureStore()
-
-class App extends React.Component {
-  render() {
+const App = () => {
+  useEffect(() => {
+    store.dispatch(fetchBooks())
+  })
     return (
       <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" render={() => 'Home!'} />
-          <Route path="/" render={() => <HelloWorld greeting="Friend" />} />
-        </Switch>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+          </Switch>
+        </BrowserRouter>
       </Provider>
     );
-  }
 }
 export default App;

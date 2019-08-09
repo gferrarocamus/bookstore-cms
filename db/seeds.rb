@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+  Book.create(
+    title: 'The Great Gatsby',
+    category: 'Action',
+    author: 'F. Scott Fitzgerald'
+  )
+  Book.create(
+    title: 'The Grapes of Wrath',
+    category: 'Action',
+    author: 'John Steinbeck'
+  )
+  Book.create(
+    title: 'Nineteen Eighty-Four',
+    category: 'Sci-Fi',
+    author: 'George Orwell'
+  )
