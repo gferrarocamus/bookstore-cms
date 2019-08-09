@@ -7,42 +7,32 @@ const initialState = {
   error: {},
 };
 
-const books = (state = initialState, action) => {
-  const { type, payload } = action;
+const books = (state = [], action) => {
+  const { type, books } = action;
 
   switch (type) {
-    case 'CREATE_BOOK': { 
-      // const book = {
-      //   id: uuidv1(),
-      //   title: action.title,
-      //   category: action.category,
-      //   author: 'Unknown',
-      //   percentage: '0',
-      // };
-      // return [...state, book];
-      return {
-        ...state,
-        books: [payload, ...state.books],
+    case 'CREATE_BOOK': {
+      const book = {
+        id: uuidv1(),
+        title: action.title,
+        category: action.category,
+        author: 'Unknown',
+        percentage: '0',
       };
+      return [...state, book];
     }
     case 'REMOVE_BOOK': {
-      // return state.filter(({ id }) => action.id !== id);
-      console.log("remove")
+      console.log('remove');
+      return state.filter(({ id }) => action.id !== id);
     }
     case 'GET_BOOKS':
-      return {
-        ...state,
-        books: payload,
-      };
+      return [...books];
     case 'POST_ERROR':
-      return {
-        ...state,
-        error: payload,
-      };
+      console.log(error);
+      return state;
     default:
       return state;
   }
 };
 
 export default books;
-

@@ -16,19 +16,19 @@ export const changeFilter = filter => ({
   filter,
 });
 
-export const getBooks = payload => ({
+export const getBooks = books => ({
   type: 'GET_BOOKS',
-  payload,
+  books,
 });
 
-export const postError = payload => ({
+export const postError = error => ({
   type: 'POST_ERROR',
-  payload,
+  error,
 });
 
 export const fetchBooks = () => async dispatch => {
   try {
-    const res = await axios.get('http://localhost:3000/v1/books');
+    const res = await axios.get('/v1/books');
     dispatch(getBooks(res.data));
   } catch (err) {
     dispatch(postError({ msg: err.response.statusText, status: err.response.status }));

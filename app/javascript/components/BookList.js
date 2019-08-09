@@ -6,7 +6,7 @@ import CategoryFilter from './CategoryFilter';
 import Book from './Book';
 
 const mapStateToProps = state => ({
-  books: state.books.books.filter(book =>
+  books: state.books.filter(book =>
     state.filter === '' ? true : book.category === state.filter
   ),
 });
@@ -23,7 +23,7 @@ const BookList = ({ books, deleteBook, handleFilterChange }) => (
             title={book.title}
             author={book.author}
             category={book.category}
-            percentage={book.percentage}
+            percentage={'0'}
             removeBook={deleteBook}
           />
         ))}
