@@ -1,11 +1,5 @@
 import axios from 'axios';
 
-export const createBook = (title, category) => ({
-  type: 'CREATE_BOOK',
-  title,
-  category,
-});
-
 export const removeBook = id => ({
   type: 'REMOVE_BOOK',
   id,

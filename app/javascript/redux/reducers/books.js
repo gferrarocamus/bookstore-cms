@@ -1,25 +1,7 @@
-
-
-const initialState = {
-  books: [],
-  loading: true,
-  error: {},
-};
-
 const books = (state = [], action) => {
   const { type, books } = action;
 
   switch (type) {
-    case 'CREATE_BOOK': {
-      // const book = {
-      //   id: uuidv1(),
-      //   title: action.title,
-      //   category: action.category,
-      //   author: 'Unknown',
-      //   percentage: '0',
-      // };
-      return [...state];
-    }
     case 'REMOVE_BOOK': {
       console.log('remove');
       return state.filter(({ id }) => action.id !== id);
@@ -27,7 +9,6 @@ const books = (state = [], action) => {
     case 'GET_BOOKS':
       return [...books];
     case 'POST_ERROR':
-      console.log(error);
       return state;
     default:
       return state;

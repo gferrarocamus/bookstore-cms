@@ -1,5 +1,3 @@
-const uuidv1 = require('uuid/v1');
-
 export const categories = [
   'Action',
   'Biography',
@@ -10,3 +8,4 @@ export const categories = [
   'Sci-Fi',
 ];
 
+export default categories;
