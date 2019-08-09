@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook, changeFilter } from '../redux/actions/index';
+import {deleteBook, changeFilter } from '../redux/actions/index';
 import CategoryFilter from './CategoryFilter';
 import Book from './Book';
 
@@ -24,7 +24,7 @@ const BookList = ({ books, deleteBook, handleFilterChange }) => (
             author={book.author}
             category={book.category}
             percentage={'0'}
-            removeBook={deleteBook}
+            deleteBook={deleteBook}
           />
         ))}
       </tbody>
@@ -41,7 +41,7 @@ BookList.propTypes = {
 export default connect(
   mapStateToProps,
   {
-    deleteBook: removeBook,
+    deleteBook: deleteBook,
     handleFilterChange: changeFilter,
   },
 )(BookList);

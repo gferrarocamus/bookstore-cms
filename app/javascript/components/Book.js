@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Book = props => {
   const {
-    id, title, author, percentage, category, removeBook,
+    id, title, author, percentage, category,deleteBook,
   } = props;
   const percentageToDegrees = Math.round(percentage * 1.8);
   const percentageStyle = {
@@ -24,7 +24,8 @@ const Book = props => {
             className="action-button"
             type="button"
             onClick={() => {
-              removeBook(id);
+              console.log(typeof id)
+             deleteBook(id);
             }}
           >
             Remove
@@ -79,7 +80,7 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  removeBook: PropTypes.func.isRequired,
+  deleteBook: PropTypes.func.isRequired,
   percentage: PropTypes.string.isRequired,
 };
 

@@ -26,6 +26,9 @@ export const postError = error => ({
   error,
 });
 
+// postError equal to bookError
+
+
 export const fetchBooks = () => async dispatch => {
   try {
     const res = await axios.get('/v1/books');
@@ -34,5 +37,17 @@ export const fetchBooks = () => async dispatch => {
     dispatch(postError({ msg: err.response.statusText, status: err.response.status }));
   }
 };
+
+export const  deleteBook= (id) => async dispatch => {
+  try {
+    const res = await axios.delete(`/v1/books/${id}`)
+    dispatch(removeBook(id))
+  } catch (err) {
+    dispatch(postError({ msg: err.response.statusText, status: err.response.status }));
+  }
+
+
+}
+
 
 export default createBook;
