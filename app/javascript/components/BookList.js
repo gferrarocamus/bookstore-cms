@@ -6,8 +6,8 @@ import CategoryFilter from './CategoryFilter';
 import Book from './Book';
 
 const mapStateToProps = state => ({
-  books: state.books.filter(book =>
-    state.filter === '' ? true : book.category === state.filter,
+  books: state.books.books.filter(book =>
+    state.filter === '' ? true : book.category === state.filter
   ),
 });
 

@@ -1,15 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import HelloWorld from './HelloWorld';
 import Homepage from './Homepage'
 import Test from '../components/layout/testBooks'
-
+import { fetchBooks } from '../redux/actions/index'
 import configureStore from '../redux/configureStore';
 
 const store = configureStore();
 
 class App extends React.Component {
+  componentDidMount() {
+    store.dispatch(fetchBooks());
+  }
   render() {
     return (
       <Provider store={store}>

@@ -11,7 +11,7 @@ const books = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case 'CREATE_BOOK': {
+    case 'CREATE_BOOK': { 
       // const book = {
       //   id: uuidv1(),
       //   title: action.title,
