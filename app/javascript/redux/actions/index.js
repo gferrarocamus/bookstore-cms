@@ -14,4 +14,14 @@ export const changeFilter = filter => ({
   filter,
 });
 
+export const getBooks = payload => ({
+  type: GET_POSTS,
+  payload,
+});
+
+export const postError = payload => ({
+  type: POST_ERROR,
+  payload,
+});
+
 export default createBook;

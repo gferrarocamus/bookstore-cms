@@ -1,13 +1,10 @@
-import {
-  GET_POSTS,
-  POST_ERROR,
-} from '../actions/types';
+import { GET_POSTS, POST_ERROR } from '../actions/types';
 
 const initialState = {
   posts: [],
   post: null,
   loading: true,
-  error: {}
+  error: {},
 };
 
 export default function(state = initialState, action) {
@@ -29,8 +26,6 @@ export default function(state = initialState, action) {
         ...state,
         error: payload,
       };
-
-
     default:
       return state;
   }

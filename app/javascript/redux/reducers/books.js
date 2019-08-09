@@ -1,37 +1,48 @@
-import { initialState } from '../../data';
-const uuidv1 = require('uuid/v1');
+// import { initialState } from '../../data';
+// const uuidv1 = require('uuid/v1');
 
-// function getThings() {
-//   fetch('http://localhost:3000/v1/books.json')
-//   .then(function(response) {
-//     return response.json();
-//   })
-//   .then(function(myJson) {
-//     console.log(JSON.stringify(myJson));
-//   });
-// }
-
-// const data = getThings()
-
+const initialState = {
+  books: [],
+  loading: true,
+  error: {},
+};
 
 const books = (state = initialState, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+
+  switch (type) {
     case 'CREATE_BOOK': {
-      const book = {
-        id: uuidv1(),
-        title: action.title,
-        category: action.category,
-        author: 'Unknown',
-        percentage: '0',
+      // const book = {
+      //   id: uuidv1(),
+      //   title: action.title,
+      //   category: action.category,
+      //   author: 'Unknown',
+      //   percentage: '0',
+      // };
+      // return [...state, book];
+      return {
+        ...state,
+        books: [payload, ...state.books],
       };
-      return [...state, book];
     }
     case 'REMOVE_BOOK': {
-      return state.filter(({ id }) => action.id !== id);
+      // return state.filter(({ id }) => action.id !== id);
+      console.log("remove")
     }
+    case 'GET_BOOKS':
+      return {
+        ...state,
+        books: payload,
+      };
+    case 'POST_ERROR':
+      return {
+        ...state,
+        error: payload,
+      };
     default:
       return state;
   }
 };
 
 export default books;
+

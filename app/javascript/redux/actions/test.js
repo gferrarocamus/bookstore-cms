@@ -8,7 +8,7 @@ import {
 // Get posts
 export const getBooks = () => async dispatch => {
   try {
-    const res = await axios.get('http://localhost:3000/v1/books');
+    const res = await axios.get('/v1/books');
 
     dispatch({
       type: GET_POSTS,
