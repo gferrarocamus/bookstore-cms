@@ -1,24 +1,8 @@
-# README
+# bookstore-cms
+> This app is a bookstore CMS built with Ruby on Rails and React/Redux.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The app allows you to add and remove books from your collection. Features to edit, comment and update reading progress are laid out but not yet fully implemented.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contributors
+* [Giuliana Ferraro](https://github.com/gferrarocamus)
+* [Zeha Irawan](https://github.com/JangkarBumi)
